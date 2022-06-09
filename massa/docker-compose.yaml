@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  massa:
+    restart: always
+    container_name: massa
+    image: "tottle/massa:11.0.1"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 31244:31244
+      - 31245:31245
