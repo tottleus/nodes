@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  sei:
+    restart: always
+    container_name: sei
+    environment:
+      MONIKER: "yournodenaame-seinode"
+      ACCOUNT_NAME: "yourname-wallet"
+      CHAIN_ID: "sei-testnet-2"
+    image: "tottle/sei:1.0.2beta"
+    command: sh -c 'while [ 1 ]; do sleep 1000; done'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./.sei:/root/.sei
+    ports:
+      - 26656:26656
